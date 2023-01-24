@@ -25,17 +25,6 @@ function addList() {
       div.remove();
     };
   }
-
-  let getTheLists = document.querySelector("ul");
-  getTheLists.addEventListener("click", function (e) {
-    if (e.target.tagName === "LI") {
-      if (!e.target.classList.contains("checked")) {
-        e.target.setAttribute("class", "checked");
-      } else {
-        e.target.removeAttribute("class");
-      }
-    }
-  });
 }
 
 document
@@ -63,12 +52,12 @@ for (let i = 0; i < getAllSpans.length; i++) {
 }
 
 let getTheLists = document.querySelector("ul");
-getTheLists.addEventListener("click", function (e) {
-  if (e.target.tagName === "LI") {
-    if (!e.target.classList.contains("checked")) {
-      e.target.setAttribute("class", "checked");
-    } else {
-      e.target.removeAttribute("class");
+getTheLists.addEventListener(
+  "click",
+  function (e) {
+    if (e.target.tagName === "LI") {
+      e.target.classList.toggle("checked");
     }
-  }
-});
+  },
+  false
+);
